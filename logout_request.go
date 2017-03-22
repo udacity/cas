@@ -24,7 +24,7 @@ func parseLogoutRequest(data []byte) (*logoutRequest, error) {
 		return nil, err
 	}
 
-	t, err := time.Parse(time.RFC1123Z, l.RawIssueInstant)
+	t, err := time.Parse(time.RFC3339, l.RawIssueInstant)
 	if err != nil {
 		return nil, err
 	}
